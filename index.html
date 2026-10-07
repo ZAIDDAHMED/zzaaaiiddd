@@ -80,7 +80,7 @@
           <div class="card">
             <div class="icon-box">▣</div>
             <h3>Granite & Stone</h3>
-            <p>Durable natural stone crafted for kitchens, exteriors, facades, and high-traffic commercial areas.</p>
+            <p>Durable natural stone crafted for mandir, mosque, gurudwara  kitchens, exteriors, facades, and high-traffic commercial areas.</p>
           </div>
           <div class="card">
             <div class="icon-box">⚑</div>
@@ -134,6 +134,22 @@
               <p>An ornamental entrance with carved arches, columns, and detailed marble borders.</p>
             </div>
           </article>
+         
+          <article class="product">
+            <img src="gurudwara.jpeg" alt="White carved marble architectural entrance with an ornate arch" />
+            <div class="product-body">
+              <span class="product-tag">GURUDWARA SAHIB</span>
+              <h3>Carved Marble Entrance</h3>
+              <p>An ornamental entrance with carved arches, columns, and detailed marble borders.</p>
+            </div>
+          </article>
+          
+
+        <!--''' to add a new product, we can copy
+          the structure of the existing product articles and replace 
+          the image source, alt text, product tag, title, and description with
+           the details of the new product. For example: -->
+
 
           <article class="product">
             <img src="imagemimber.jpeg" alt="White marble prayer niche with a carved arch and stepped platform" />
@@ -156,7 +172,7 @@
         </div>
 
         <div class="panel">
-          <h3>Why clients choose Nasseb</h3>
+          <h3>Why clients choose Nasseb marbles</h3>
           <ul class="about-list">
             <li>Extensive selection of marble, granite, and natural stone</li>
             <li>Reliable sourcing for residential and commercial work</li>
@@ -215,7 +231,7 @@
               <option value="Project Consultation">Project Consultation</option>
             </select>
             <textarea id="message" placeholder="Tell us about your requirement" required></textarea>
-            <button type="submit" class="cta-btn">Send Inquiry on WhatsApp</button>
+            <button type="submit" class="cta-btn">Send Enquiry on WhatsApp</button>
           </form>
         </div>
       </div>
@@ -234,25 +250,28 @@
     const form = document.getElementById('whatsappForm');
     const phoneNumber = '919588010003';
 
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
+    if (form) {
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
 
-      const name = document.getElementById('name').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const service = document.getElementById('service').value.trim();
-      const message = document.getElementById('message').value.trim();
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const service = document.getElementById('service').value.trim();
+        const message = document.getElementById('message').value.trim();
 
-      if (!name || !phone || !service || !message) {
-        alert('Please fill in all fields before sending.');
-        return;
-      }
+        if (!name || !phone || !service || !message) {
+          alert('Please fill in all fields before sending.');
+          return;
+        }
 
-      const text = encodeURIComponent(
-        `Hello Nasseb Marbles,\n\nName: ${name}\nPhone: ${phone}\nService: ${service}\nRequirement: ${message}`
-      );
+        const text = encodeURIComponent(
+          `Hello Nasseb Marbles,\n\nName: ${name}\nPhone: ${phone}\nService: ${service}\nRequirement: ${message}`
+        );
 
-      window.open(`https://wa.me/${phoneNumber}?text=${text}`, '_blank');
-    });
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${text}`;
+        window.open(whatsappUrl, '_blank');
+      });
+    }
   </script>
 </body>
 </html>
